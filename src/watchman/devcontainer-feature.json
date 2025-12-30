@@ -2,5 +2,8 @@
     "name": "Watchman",
     "id": "watchman",
     "version": "1.0.0",
-    "description": "A feature to install Watchman - A file watching service."
+    "description": "A feature to install Watchman - A file watching service.",
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
 }
