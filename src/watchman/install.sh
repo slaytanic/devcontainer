@@ -10,6 +10,13 @@ if ! command -v curl >/dev/null 2>&1; then
     apt-get install -y curl
 fi
 
+# Check if unzip is installed, install if not
+if ! command -v unzip >/dev/null 2>&1; then
+    echo "unzip is not installed. Installing unzip..."
+    apt-get update -y
+    apt-get install -y unzip
+fi
+
 echo "Fetching latest Watchman release information..."
 
 # Get the latest release data
