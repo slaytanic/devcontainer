@@ -37,14 +37,12 @@ echo "Downloading $FILENAME..."
 mkdir -p /tmp/watchman
 cd /tmp/watchman
 curl -L -o "$FILENAME" "$DOWNLOAD_URL"
-
 echo "Download complete: $FILENAME"
 
 unzip "$FILENAME"
 echo "Unzipped $FILENAME"
 
 echo "Installing Watchman..."
-
 cd watchman-v*.00-linux
 mkdir -p /usr/local/{bin,lib} /usr/local/var/run/watchman
 cp bin/* /usr/local/bin
@@ -52,5 +50,8 @@ cp lib/* /usr/local/lib
 chmod 755 /usr/local/bin/watchman
 chmod 2777 /usr/local/var/run/watchman
 
-rm "$FILENAME"
-echo "Removed zip file $FILENAME"
+echo "Cleaning up..."
+cd
+rm -rf /tmp/watchman
+
+echo "Watchman installation complete."
