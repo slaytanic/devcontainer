@@ -1,0 +1,8 @@
+{
+  "watchman": {
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+      "watchman": {}
+    }
+  }
+}
