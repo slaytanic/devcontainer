@@ -3,6 +3,13 @@ set -e
 
 echo "Activating feature 'watchman'"
 
+# Check if curl is installed, install if not
+if ! command -v curl >/dev/null 2>&1; then
+    echo "curl is not installed. Installing curl..."
+    apt-get update -y
+    apt-get install -y curl
+fi
+
 echo "Fetching latest Watchman release information..."
 
 # Get the latest release data
